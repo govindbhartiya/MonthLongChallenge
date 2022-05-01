@@ -1,1 +1,30 @@
-
+class Solution{
+    public:
+    bool backspaceCompare(string s, string t)
+{
+    string s1="",t1="";
+    int i=0;
+    while(s[i]!=s.empty())
+    {
+        if(s[i]>='a' && s[i]<='z')
+            s1+=s[i];
+        else if(!s1.empty())
+            s1.pop_back();
+        ++i;
+    }
+    i=0;
+    while(t[i]!=t.empty())
+    {
+        if(t[i]>='a' && t[i]<='z')
+            t1+=t[i];
+        else if(!t1.empty())
+            t1.pop_back();
+        ++i;
+    }
+    
+    if(s1==t1)
+        return true;
+    else 
+       return false;
+}
+};
